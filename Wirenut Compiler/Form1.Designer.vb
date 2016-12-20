@@ -80,7 +80,7 @@ Partial Class Form1
         Me.convertSave.Name = "convertSave"
         Me.convertSave.Size = New System.Drawing.Size(437, 49)
         Me.convertSave.TabIndex = 5
-        Me.convertSave.Text = "Convert & Save"
+        Me.convertSave.Text = "Convert && Save"
         Me.convertSave.UseVisualStyleBackColor = True
         '
         'Label2
@@ -113,7 +113,7 @@ Partial Class Form1
         Me.Controls.Add(Me.folderOpenBrowse)
         Me.Controls.Add(Me.folderOpenPath)
         Me.Name = "Form1"
-        Me.Text = "Form1"
+        Me.Text = "Wirenut Compiler"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

@@ -4,7 +4,7 @@ Imports System.Collections
 Imports System.IO.Compression
 
 
-Public Class Form1
+Public Class MainForm
     Private Sub folderOpenBrowse_Click(sender As Object, e As EventArgs) Handles folderOpenBrowse.Click
         If (folderBrowser.ShowDialog() = DialogResult.OK) Then
             folderOpenPath.Text = folderBrowser.SelectedPath

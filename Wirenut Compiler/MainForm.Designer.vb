@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class Form1
+Partial Class MainForm
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,6 +22,7 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainForm))
         Me.folderBrowser = New System.Windows.Forms.FolderBrowserDialog()
         Me.folderOpenPath = New System.Windows.Forms.TextBox()
         Me.folderOpenBrowse = New System.Windows.Forms.Button()
@@ -99,7 +100,7 @@ Partial Class Form1
         Me.progressBar.Size = New System.Drawing.Size(437, 23)
         Me.progressBar.TabIndex = 7
         '
-        'Form1
+        'MainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -112,7 +113,8 @@ Partial Class Form1
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.folderOpenBrowse)
         Me.Controls.Add(Me.folderOpenPath)
-        Me.Name = "Form1"
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Name = "MainForm"
         Me.Text = "Wirenut Compiler"
         Me.ResumeLayout(False)
         Me.PerformLayout()

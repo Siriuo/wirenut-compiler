@@ -32,18 +32,22 @@ Partial Class MainForm
         Me.convertSave = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.progressBar = New System.Windows.Forms.ProgressBar()
+        Me.conversionMethod = New System.Windows.Forms.GroupBox()
+        Me.conversionMethodFileName = New System.Windows.Forms.RadioButton()
+        Me.conversionMethodModInfo = New System.Windows.Forms.RadioButton()
+        Me.conversionMethod.SuspendLayout()
         Me.SuspendLayout()
         '
         'folderOpenPath
         '
-        Me.folderOpenPath.Location = New System.Drawing.Point(12, 29)
+        Me.folderOpenPath.Location = New System.Drawing.Point(12, 69)
         Me.folderOpenPath.Name = "folderOpenPath"
         Me.folderOpenPath.Size = New System.Drawing.Size(356, 20)
         Me.folderOpenPath.TabIndex = 0
         '
         'folderOpenBrowse
         '
-        Me.folderOpenBrowse.Location = New System.Drawing.Point(374, 29)
+        Me.folderOpenBrowse.Location = New System.Drawing.Point(374, 69)
         Me.folderOpenBrowse.Name = "folderOpenBrowse"
         Me.folderOpenBrowse.Size = New System.Drawing.Size(75, 23)
         Me.folderOpenBrowse.TabIndex = 1
@@ -53,7 +57,7 @@ Partial Class MainForm
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(12, 13)
+        Me.Label1.Location = New System.Drawing.Point(12, 53)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(215, 13)
         Me.Label1.TabIndex = 2
@@ -61,14 +65,14 @@ Partial Class MainForm
         '
         'folderSavePath
         '
-        Me.folderSavePath.Location = New System.Drawing.Point(12, 81)
+        Me.folderSavePath.Location = New System.Drawing.Point(12, 121)
         Me.folderSavePath.Name = "folderSavePath"
         Me.folderSavePath.Size = New System.Drawing.Size(356, 20)
         Me.folderSavePath.TabIndex = 3
         '
         'folderSaveBrowse
         '
-        Me.folderSaveBrowse.Location = New System.Drawing.Point(374, 81)
+        Me.folderSaveBrowse.Location = New System.Drawing.Point(374, 121)
         Me.folderSaveBrowse.Name = "folderSaveBrowse"
         Me.folderSaveBrowse.Size = New System.Drawing.Size(75, 23)
         Me.folderSaveBrowse.TabIndex = 4
@@ -77,7 +81,7 @@ Partial Class MainForm
         '
         'convertSave
         '
-        Me.convertSave.Location = New System.Drawing.Point(12, 110)
+        Me.convertSave.Location = New System.Drawing.Point(12, 150)
         Me.convertSave.Name = "convertSave"
         Me.convertSave.Size = New System.Drawing.Size(437, 49)
         Me.convertSave.TabIndex = 5
@@ -87,7 +91,7 @@ Partial Class MainForm
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(12, 65)
+        Me.Label2.Location = New System.Drawing.Point(12, 105)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(127, 13)
         Me.Label2.TabIndex = 6
@@ -95,16 +99,50 @@ Partial Class MainForm
         '
         'progressBar
         '
-        Me.progressBar.Location = New System.Drawing.Point(12, 165)
+        Me.progressBar.Location = New System.Drawing.Point(12, 205)
         Me.progressBar.Name = "progressBar"
         Me.progressBar.Size = New System.Drawing.Size(437, 23)
         Me.progressBar.TabIndex = 7
+        '
+        'conversionMethod
+        '
+        Me.conversionMethod.Controls.Add(Me.conversionMethodModInfo)
+        Me.conversionMethod.Controls.Add(Me.conversionMethodFileName)
+        Me.conversionMethod.Location = New System.Drawing.Point(12, 13)
+        Me.conversionMethod.Name = "conversionMethod"
+        Me.conversionMethod.Size = New System.Drawing.Size(437, 37)
+        Me.conversionMethod.TabIndex = 8
+        Me.conversionMethod.TabStop = False
+        Me.conversionMethod.Text = "Conversion Method"
+        '
+        'conversionMethodFileName
+        '
+        Me.conversionMethodFileName.AutoSize = True
+        Me.conversionMethodFileName.Checked = True
+        Me.conversionMethodFileName.Location = New System.Drawing.Point(7, 14)
+        Me.conversionMethodFileName.Name = "conversionMethodFileName"
+        Me.conversionMethodFileName.Size = New System.Drawing.Size(72, 17)
+        Me.conversionMethodFileName.TabIndex = 0
+        Me.conversionMethodFileName.TabStop = True
+        Me.conversionMethodFileName.Text = "File Name"
+        Me.conversionMethodFileName.UseVisualStyleBackColor = True
+        '
+        'conversionMethodModInfo
+        '
+        Me.conversionMethodModInfo.AutoSize = True
+        Me.conversionMethodModInfo.Location = New System.Drawing.Point(103, 14)
+        Me.conversionMethodModInfo.Name = "conversionMethodModInfo"
+        Me.conversionMethodModInfo.Size = New System.Drawing.Size(67, 17)
+        Me.conversionMethodModInfo.TabIndex = 1
+        Me.conversionMethodModInfo.Text = "Mod Info"
+        Me.conversionMethodModInfo.UseVisualStyleBackColor = True
         '
         'MainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(461, 196)
+        Me.ClientSize = New System.Drawing.Size(461, 241)
+        Me.Controls.Add(Me.conversionMethod)
         Me.Controls.Add(Me.progressBar)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.convertSave)
@@ -116,6 +154,8 @@ Partial Class MainForm
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "MainForm"
         Me.Text = "Wirenut Compiler"
+        Me.conversionMethod.ResumeLayout(False)
+        Me.conversionMethod.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -130,4 +170,7 @@ Partial Class MainForm
     Friend WithEvents convertSave As Button
     Friend WithEvents Label2 As Label
     Friend WithEvents progressBar As ProgressBar
+    Friend WithEvents conversionMethod As GroupBox
+    Friend WithEvents conversionMethodModInfo As RadioButton
+    Friend WithEvents conversionMethodFileName As RadioButton
 End Class

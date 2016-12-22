@@ -3,6 +3,10 @@ Imports System.IO
 Imports System.Collections
 Imports System.IO.Compression
 
+Imports Newtonsoft.Json
+Imports Newtonsoft.Json.Linq
+
+
 
 Public Class MainForm
     Private Sub folderOpenBrowse_Click(sender As Object, e As EventArgs) Handles folderOpenBrowse.Click
@@ -43,25 +47,72 @@ Public Class MainForm
 
             progressBar.Maximum = modFiles.Count
 
+            progressBar.Value = 0
+
 
             For Each modFile As String In modFiles
+
+
                 Dim fileName As String = Path.GetFileNameWithoutExtension(modFile)
                 Dim fileExtension As String = Path.GetExtension(modFile)
 
+                Dim zipName As String
+
+
+
+                If conversionMethodModInfo.Checked Then
+
+                    Using modStream As FileStream = New FileStream(modFile, FileMode.Open)
+
+
+
+                        Using modArchive As ZipArchive = New ZipArchive(modStream, ZipArchiveMode.Read)
+                            Dim modInfo As ZipArchiveEntry = modArchive.GetEntry("mcmod.info")
+
+                            Using reader As StreamReader = New StreamReader(modInfo.Open())
+
+
+
+                                Dim Json As String = reader.ReadToEnd.ToString
+
+                                Console.WriteLine("JSON" + Json)
+
+                                Dim modObject As JArray = JArray.Parse(Json)
+
+                                Dim modID As String = modObject.First.Item("modid")
+
+                                Dim modVersion As String = modObject.First.Item("version")
+
+                                Dim mcVersion As String = modObject.First.Item("mcversion")
+
+                                zipName = modID + "-" + mcVersion + "-" + modVersion
+
+
+                                reader.Close()
+                            End Using
+                        End Using
+                    End Using
+                Else
+
+                    zipName = fileName
+                End If
 
                 System.IO.File.Move(modFile, openPath + "/mods/" + fileName + fileExtension)
                 Console.WriteLine("Moved To Mods Folder")
 
-                If (Not File.Exists(savePath + "/" + fileName.ToLower + ".zip")) Then
+                If (Not File.Exists(savePath + "/" + zipName.ToLower + ".zip")) Then
 
-                    ZipFile.CreateFromDirectory(openPath + "/mods", savePath + "/" + fileName.ToLower + ".zip", CompressionLevel.Fastest, True)
+                    ZipFile.CreateFromDirectory(openPath + "/mods", savePath + "/" + zipName.ToLower + ".zip", CompressionLevel.Fastest, True)
                     Console.WriteLine("Zipped File")
                 End If
+
                 System.IO.File.Move(openPath + "/mods/" + fileName + fileExtension, openPath + "/done/" + fileName + fileExtension)
                 Console.WriteLine("Moved To Done Folder")
 
                 progressBar.Value = progressBar.Value + 1
                 Console.WriteLine("Updated Progress Bar")
+
+
             Next
         Else
 
@@ -70,4 +121,5 @@ Public Class MainForm
         End If
 
     End Sub
+
 End Class

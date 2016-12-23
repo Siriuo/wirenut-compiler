@@ -64,32 +64,83 @@ Public Class MainForm
 
                     Using modStream As FileStream = New FileStream(modFile, FileMode.Open)
 
-
-
                         Using modArchive As ZipArchive = New ZipArchive(modStream, ZipArchiveMode.Read)
                             Dim modInfo As ZipArchiveEntry = modArchive.GetEntry("mcmod.info")
 
-                            Using reader As StreamReader = New StreamReader(modInfo.Open())
+
+
+                            If modInfo Is Nothing Then
+                                zipName = fileName
+                            Else
+                                Using reader As StreamReader = New StreamReader(modInfo.Open())
+
+                                    Dim Json As String = reader.ReadToEnd.ToString
+
+                                    Console.WriteLine("JSON" + Json)
+
+                                    Dim Token As JToken = JToken.Parse(Json)
+
+                                    Dim modObject As JToken = JToken.Parse(Json)
+
+                                    Dim modID As String
+                                    Dim modVersion As String
+                                    Dim mcVersion As String
+
+
+                                    If modObject.Type.ToString = "Array" Then
+                                        modID = modObject.First.Item("modid")
+
+                                        modVersion = modObject.First.Item("version")
+
+                                        mcVersion = modObject.First.Item("mcversion")
+                                    ElseIf modObject.Type.ToString = "Object" Then
+
+                                        modObject = modObject.Item("modList").First
+
+                                        Console.WriteLine(modObject)
 
 
 
-                                Dim Json As String = reader.ReadToEnd.ToString
+                                        modID = modObject.Item("modid")
 
-                                Console.WriteLine("JSON" + Json)
+                                        modVersion = modObject.Item("version")
 
-                                Dim modObject As JArray = JArray.Parse(Json)
+                                        mcVersion = modObject.Item("mcversion")
 
-                                Dim modID As String = modObject.First.Item("modid")
+                                    End If
 
-                                Dim modVersion As String = modObject.First.Item("version")
-
-                                Dim mcVersion As String = modObject.First.Item("mcversion")
-
-                                zipName = modID + "-" + mcVersion + "-" + modVersion
+                                    If modID Is Nothing Then
+                                        MissingModID.missingLabelInfo.Text = "The Mod ID is missing for " + fileName + fileExtension + ". Please enter this below"
 
 
-                                reader.Close()
-                            End Using
+                                        MissingModID.ShowDialog()
+
+                                        modID = MissingModID.MissingResult()
+
+                                    ElseIf modVersion Is Nothing Then
+                                        MissingModVersion.missingLabelInfo.Text = "The Mod Version is missing for " + fileName + fileExtension + ". Please enter this below"
+
+                                        MissingModVersion.ShowDialog()
+
+                                        modVersion = MissingModVersion.MissingResult()
+
+                                    ElseIf mcVersion Is Nothing Then
+                                        MissingModID.missingLabelInfo.Text = "The Minecraft Version is missing for " + fileName + fileExtension + ". Please enter this below"
+
+                                        MissingMcVersion.ShowDialog()
+
+                                        mcVersion = MissingMcVersion.MissingResult()
+                                    End If
+
+                                    zipName = modID + "-" + mcVersion + "-" + modVersion
+
+
+                                    reader.Close()
+                                End Using
+
+                            End If
+
+
                         End Using
                     End Using
                 Else

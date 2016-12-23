@@ -83,11 +83,29 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="MissingMcVersion.Designer.vb">
+      <DependentUpon>MissingMcVersion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MissingMcVersion.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MainForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainForm.Designer.vb">
       <DependentUpon>MainForm.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MissingModID.Designer.vb">
+      <DependentUpon>MissingModID.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MissingModID.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MissingModVersion.Designer.vb">
+      <DependentUpon>MissingModVersion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MissingModVersion.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -115,6 +133,15 @@
   <ItemGroup>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MissingMcVersion.resx">
+      <DependentUpon>MissingMcVersion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MissingModID.resx">
+      <DependentUpon>MissingModID.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MissingModVersion.resx">
+      <DependentUpon>MissingModVersion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

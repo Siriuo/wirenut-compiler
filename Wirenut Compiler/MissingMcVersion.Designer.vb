@@ -71,7 +71,7 @@ Partial Class MissingMcVersion
         Me.Controls.Add(Me.missingLabelInfo)
         Me.Controls.Add(Me.missingFormInput)
         Me.Name = "MissingMcVersion"
-        Me.Text = "MissingMcVersion"
+        Me.Text = "Missing Minecraft Version"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

@@ -125,7 +125,7 @@ Public Class MainForm
                                         modVersion = MissingModVersion.MissingResult()
 
                                     ElseIf mcVersion Is Nothing Then
-                                        MissingModID.missingLabelInfo.Text = "The Minecraft Version is missing for " + fileName + fileExtension + ". Please enter this below"
+                                        MissingMcVersion.missingLabelInfo.Text = "The Minecraft Version is missing for " + fileName + fileExtension + ". Please enter this below"
 
                                         MissingMcVersion.ShowDialog()
 

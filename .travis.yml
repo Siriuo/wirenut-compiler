@@ -1,4 +1,4 @@
 language: csharp
-solution: "Wirenut Compiler.sln"
+solution: WirenutCompiler.sln
 script:
-  - xbuild /p:VbcToolExe=vbnc.exe "Wirenut Compiler.sln"
+  - xbuild /p:VbcToolExe=vbnc.exe WirenutCompiler.sln

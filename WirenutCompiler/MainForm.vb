@@ -48,7 +48,7 @@ Public Class MainForm
 
             End If
 
-            progressBar.Maximum = modFiles.Count
+            progressBar.Maximum = modFiles.Length
 
             progressBar.Value = 0
 
@@ -170,7 +170,9 @@ Public Class MainForm
 
             Next
 
-            For Each jars In Directory.GetFiles(openPath + "/tmp/done")
+
+
+            For Each jars As String In Directory.GetFiles(openPath + "/tmp/done")
                 System.IO.File.Move(jars, openPath + "/" + Path.GetFileName(jars))
 
 

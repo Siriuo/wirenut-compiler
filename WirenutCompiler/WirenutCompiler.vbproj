@@ -186,9 +186,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="logo.ico">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="resources\logo.ico" />
     <None Include="packages.config" />
     <None Include="resources\splash.png" />

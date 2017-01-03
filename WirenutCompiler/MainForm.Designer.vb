@@ -22,7 +22,6 @@ Partial Class MainForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainForm))
         Me.folderBrowser = New System.Windows.Forms.FolderBrowserDialog()
         Me.folderOpenPath = New System.Windows.Forms.TextBox()
         Me.folderOpenBrowse = New System.Windows.Forms.Button()
@@ -151,7 +150,6 @@ Partial Class MainForm
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.folderOpenBrowse)
         Me.Controls.Add(Me.folderOpenPath)
-        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "MainForm"
         Me.Text = "Wirenut Compiler"
         Me.conversionMethod.ResumeLayout(False)

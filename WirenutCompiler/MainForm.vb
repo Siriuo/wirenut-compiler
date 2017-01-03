@@ -8,6 +8,7 @@ Imports Newtonsoft.Json.Linq
 
 
 
+
 Public Class MainForm
     Private Sub folderOpenBrowse_Click(sender As Object, e As EventArgs) Handles folderOpenBrowse.Click
         If (folderBrowser.ShowDialog() = DialogResult.OK) Then
@@ -31,16 +32,16 @@ Public Class MainForm
 
             Dim modFiles As String() = Directory.GetFiles(openPath, "*.jar")
 
-            If (Not Directory.Exists(openPath + "/mods")) Then
+            If (Not Directory.Exists(openPath + "/tmp/mods")) Then
 
-                Directory.CreateDirectory(openPath + "/mods")
+                Directory.CreateDirectory(openPath + "/tmp/mods")
 
 
             End If
 
-            If (Not Directory.Exists(openPath + "/done")) Then
+            If (Not Directory.Exists(openPath + "/tmp/done")) Then
 
-                Directory.CreateDirectory(openPath + "/done")
+                Directory.CreateDirectory(openPath + "/tmp/done")
 
 
             End If
@@ -61,7 +62,6 @@ Public Class MainForm
 
 
                 If conversionMethodModInfo.Checked Then
-
                     Using modStream As FileStream = New FileStream(modFile, FileMode.Open)
 
                         Using modArchive As ZipArchive = New ZipArchive(modStream, ZipArchiveMode.Read)
@@ -143,28 +143,41 @@ Public Class MainForm
 
                         End Using
                     End Using
+
                 Else
 
                     zipName = fileName
                 End If
 
-                System.IO.File.Move(modFile, openPath + "/mods/" + fileName + fileExtension)
+                System.IO.File.Move(modFile, openPath + "/tmp/mods/" + fileName + fileExtension)
                 Console.WriteLine("Moved To Mods Folder")
 
                 If (Not File.Exists(savePath + "/" + zipName.ToLower + ".zip")) Then
 
-                    ZipFile.CreateFromDirectory(openPath + "/mods", savePath + "/" + zipName.ToLower + ".zip", CompressionLevel.Fastest, True)
+                    ZipFile.CreateFromDirectory(openPath + "/tmp/mods", savePath + "/" + zipName.ToLower + ".zip", CompressionLevel.Fastest, True)
                     Console.WriteLine("Zipped File")
                 End If
 
-                System.IO.File.Move(openPath + "/mods/" + fileName + fileExtension, openPath + "/done/" + fileName + fileExtension)
+                System.IO.File.Move(openPath + "/tmp/mods/" + fileName + fileExtension, openPath + "/tmp/done/" + fileName + fileExtension)
                 Console.WriteLine("Moved To Done Folder")
 
                 progressBar.Value = progressBar.Value + 1
                 Console.WriteLine("Updated Progress Bar")
 
 
+
             Next
+
+            For Each jars In Directory.GetFiles(openPath + "/tmp/done")
+                System.IO.File.Move(jars, openPath + "/" + Path.GetFileName(jars))
+
+
+
+            Next
+
+            System.IO.Directory.Delete(openPath + "/tmp", True)
+
+            MessageBox.Show("Compile Complete!")
         Else
 
             MessageBox.Show("Please choose a Valid Folder location!")

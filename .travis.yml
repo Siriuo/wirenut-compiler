@@ -1,7 +1,8 @@
 language: csharp
 solution: WirenutCompiler.sln
-sudo: required
-dist: trusty
-dotnet: 1.0.0-preview2-003121
+
+install:
+- nuget restore WirenutCompiler.sln
+
 script:
-  - xbuild /p:VbcToolExe=vbnc.exe WirenutCompiler.sln
+  - xbuild /p:Configuration=Release WirenutCompiler.sln

@@ -190,7 +190,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="resources\logo.ico" />
-    <Content Include="resources\Newtonsoft.Json.dll" />
     <None Include="packages.config" />
     <None Include="resources\splash.png" />
   </ItemGroup>

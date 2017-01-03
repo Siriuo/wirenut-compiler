@@ -2,7 +2,8 @@ language: csharp
 solution: WirenutCompiler.sln
 
 install:
-- nuget restore WirenutCompiler.sln
+ - nuget restore WirenutCompiler.sln
 
 script:
-  - xbuild /p:Configuration=Release WirenutCompiler.sln
+ - xbuild /p:Configuration=Release WirenutCompiler.sln
+

@@ -33,8 +33,8 @@ Partial Class MainForm
         Me.Label2 = New System.Windows.Forms.Label()
         Me.progressBar = New System.Windows.Forms.ProgressBar()
         Me.conversionMethod = New System.Windows.Forms.GroupBox()
-        Me.conversionMethodFileName = New System.Windows.Forms.RadioButton()
         Me.conversionMethodModInfo = New System.Windows.Forms.RadioButton()
+        Me.conversionMethodFileName = New System.Windows.Forms.RadioButton()
         Me.conversionMethod.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -115,6 +115,16 @@ Partial Class MainForm
         Me.conversionMethod.TabStop = False
         Me.conversionMethod.Text = "Conversion Method"
         '
+        'conversionMethodModInfo
+        '
+        Me.conversionMethodModInfo.AutoSize = True
+        Me.conversionMethodModInfo.Location = New System.Drawing.Point(103, 14)
+        Me.conversionMethodModInfo.Name = "conversionMethodModInfo"
+        Me.conversionMethodModInfo.Size = New System.Drawing.Size(67, 17)
+        Me.conversionMethodModInfo.TabIndex = 1
+        Me.conversionMethodModInfo.Text = "Mod Info"
+        Me.conversionMethodModInfo.UseVisualStyleBackColor = True
+        '
         'conversionMethodFileName
         '
         Me.conversionMethodFileName.AutoSize = True
@@ -126,16 +136,6 @@ Partial Class MainForm
         Me.conversionMethodFileName.TabStop = True
         Me.conversionMethodFileName.Text = "File Name"
         Me.conversionMethodFileName.UseVisualStyleBackColor = True
-        '
-        'conversionMethodModInfo
-        '
-        Me.conversionMethodModInfo.AutoSize = True
-        Me.conversionMethodModInfo.Location = New System.Drawing.Point(103, 14)
-        Me.conversionMethodModInfo.Name = "conversionMethodModInfo"
-        Me.conversionMethodModInfo.Size = New System.Drawing.Size(67, 17)
-        Me.conversionMethodModInfo.TabIndex = 1
-        Me.conversionMethodModInfo.Text = "Mod Info"
-        Me.conversionMethodModInfo.UseVisualStyleBackColor = True
         '
         'MainForm
         '

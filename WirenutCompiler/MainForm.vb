@@ -3,6 +3,8 @@ Imports System.IO
 Imports System.Collections
 Imports System.IO.Compression
 
+Imports System.Reflection
+
 Imports Newtonsoft.Json
 Imports Newtonsoft.Json.Linq
 
@@ -186,4 +188,7 @@ Public Class MainForm
 
     End Sub
 
+    Private Sub MainForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Assembly.Load("Newtonsoft.Json")
+    End Sub
 End Class

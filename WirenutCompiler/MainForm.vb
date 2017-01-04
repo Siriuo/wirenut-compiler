@@ -241,5 +241,7 @@ Public Class MainForm
 
 
         End If
+
+        Console.WriteLine(Application.ProductVersion)
     End Sub
 End Class

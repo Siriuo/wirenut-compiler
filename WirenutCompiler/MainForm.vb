@@ -8,6 +8,8 @@ Imports System.Reflection
 Imports Newtonsoft.Json
 Imports Newtonsoft.Json.Linq
 
+Imports GitHubUpdate
+
 
 
 
@@ -190,7 +192,54 @@ Public Class MainForm
 
     End Sub
 
-    Private Sub MainForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Assembly.Load("Newtonsoft.Json")
+
+
+    Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
+        Me.Close()
+    End Sub
+
+    Private Async Sub CheckForUpdatesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CheckForUpdatesToolStripMenuItem.Click
+
+        Dim updateChecker As New UpdateChecker("Siriuo", "wirenut-compiler")
+
+        Dim update As UpdateType = Await updateChecker.CheckUpdate
+
+        If update = UpdateType.None Then
+            MessageBox.Show("Already Up to Date!")
+
+        Else
+            Dim result As String = New UpdateNotifyDialog(updateChecker).ShowDialog
+
+            If result = DialogResult.Yes Then
+
+                updateChecker.DownloadAsset("WirenutCompilerInstaller.msi")
+
+            End If
+
+
+        End If
+
+
+    End Sub
+
+    Private Async Sub MainForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim updateChecker As New UpdateChecker("Siriuo", "wirenut-compiler")
+
+        Dim update As UpdateType = Await updateChecker.CheckUpdate
+
+        If update = UpdateType.None Then
+            MessageBox.Show("Already Up to Date!")
+
+        Else
+            Dim result As String = New UpdateNotifyDialog(updateChecker).ShowDialog
+
+            If result = DialogResult.Yes Then
+
+                updateChecker.DownloadAsset("WirenutCompilerInstaller.msi")
+
+            End If
+
+
+        End If
     End Sub
 End Class

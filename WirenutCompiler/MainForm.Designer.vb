@@ -34,19 +34,26 @@ Partial Class MainForm
         Me.conversionMethod = New System.Windows.Forms.GroupBox()
         Me.conversionMethodModInfo = New System.Windows.Forms.RadioButton()
         Me.conversionMethodFileName = New System.Windows.Forms.RadioButton()
+        Me.MenuStrip = New System.Windows.Forms.MenuStrip()
+        Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CheckForUpdatesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.conversionMethod.SuspendLayout()
+        Me.MenuStrip.SuspendLayout()
         Me.SuspendLayout()
         '
         'folderOpenPath
         '
-        Me.folderOpenPath.Location = New System.Drawing.Point(12, 69)
+        Me.folderOpenPath.Location = New System.Drawing.Point(12, 93)
         Me.folderOpenPath.Name = "folderOpenPath"
         Me.folderOpenPath.Size = New System.Drawing.Size(356, 20)
         Me.folderOpenPath.TabIndex = 0
         '
         'folderOpenBrowse
         '
-        Me.folderOpenBrowse.Location = New System.Drawing.Point(374, 69)
+        Me.folderOpenBrowse.Location = New System.Drawing.Point(374, 93)
         Me.folderOpenBrowse.Name = "folderOpenBrowse"
         Me.folderOpenBrowse.Size = New System.Drawing.Size(75, 23)
         Me.folderOpenBrowse.TabIndex = 1
@@ -56,7 +63,7 @@ Partial Class MainForm
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(12, 53)
+        Me.Label1.Location = New System.Drawing.Point(12, 77)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(215, 13)
         Me.Label1.TabIndex = 2
@@ -64,14 +71,14 @@ Partial Class MainForm
         '
         'folderSavePath
         '
-        Me.folderSavePath.Location = New System.Drawing.Point(12, 121)
+        Me.folderSavePath.Location = New System.Drawing.Point(12, 145)
         Me.folderSavePath.Name = "folderSavePath"
         Me.folderSavePath.Size = New System.Drawing.Size(356, 20)
         Me.folderSavePath.TabIndex = 3
         '
         'folderSaveBrowse
         '
-        Me.folderSaveBrowse.Location = New System.Drawing.Point(374, 121)
+        Me.folderSaveBrowse.Location = New System.Drawing.Point(374, 145)
         Me.folderSaveBrowse.Name = "folderSaveBrowse"
         Me.folderSaveBrowse.Size = New System.Drawing.Size(75, 23)
         Me.folderSaveBrowse.TabIndex = 4
@@ -80,7 +87,7 @@ Partial Class MainForm
         '
         'convertSave
         '
-        Me.convertSave.Location = New System.Drawing.Point(12, 150)
+        Me.convertSave.Location = New System.Drawing.Point(12, 174)
         Me.convertSave.Name = "convertSave"
         Me.convertSave.Size = New System.Drawing.Size(437, 49)
         Me.convertSave.TabIndex = 5
@@ -90,7 +97,7 @@ Partial Class MainForm
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(12, 105)
+        Me.Label2.Location = New System.Drawing.Point(12, 129)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(127, 13)
         Me.Label2.TabIndex = 6
@@ -98,7 +105,7 @@ Partial Class MainForm
         '
         'progressBar
         '
-        Me.progressBar.Location = New System.Drawing.Point(12, 205)
+        Me.progressBar.Location = New System.Drawing.Point(12, 229)
         Me.progressBar.Name = "progressBar"
         Me.progressBar.Size = New System.Drawing.Size(437, 23)
         Me.progressBar.TabIndex = 7
@@ -107,7 +114,7 @@ Partial Class MainForm
         '
         Me.conversionMethod.Controls.Add(Me.conversionMethodModInfo)
         Me.conversionMethod.Controls.Add(Me.conversionMethodFileName)
-        Me.conversionMethod.Location = New System.Drawing.Point(12, 13)
+        Me.conversionMethod.Location = New System.Drawing.Point(12, 37)
         Me.conversionMethod.Name = "conversionMethod"
         Me.conversionMethod.Size = New System.Drawing.Size(437, 37)
         Me.conversionMethod.TabIndex = 8
@@ -136,11 +143,54 @@ Partial Class MainForm
         Me.conversionMethodFileName.Text = "File Name"
         Me.conversionMethodFileName.UseVisualStyleBackColor = True
         '
+        'MenuStrip
+        '
+        Me.MenuStrip.GripMargin = New System.Windows.Forms.Padding(0)
+        Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.HelpToolStripMenuItem})
+        Me.MenuStrip.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip.Name = "MenuStrip"
+        Me.MenuStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
+        Me.MenuStrip.Size = New System.Drawing.Size(461, 24)
+        Me.MenuStrip.TabIndex = 9
+        Me.MenuStrip.Text = "MenuStrip"
+        '
+        'FileToolStripMenuItem
+        '
+        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ExitToolStripMenuItem})
+        Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
+        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(37, 20)
+        Me.FileToolStripMenuItem.Text = "File"
+        '
+        'ExitToolStripMenuItem
+        '
+        Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(92, 22)
+        Me.ExitToolStripMenuItem.Text = "Exit"
+        '
+        'HelpToolStripMenuItem
+        '
+        Me.HelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CheckForUpdatesToolStripMenuItem, Me.AboutToolStripMenuItem})
+        Me.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem"
+        Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(44, 20)
+        Me.HelpToolStripMenuItem.Text = "Help"
+        '
+        'CheckForUpdatesToolStripMenuItem
+        '
+        Me.CheckForUpdatesToolStripMenuItem.Name = "CheckForUpdatesToolStripMenuItem"
+        Me.CheckForUpdatesToolStripMenuItem.Size = New System.Drawing.Size(171, 22)
+        Me.CheckForUpdatesToolStripMenuItem.Text = "Check for Updates"
+        '
+        'AboutToolStripMenuItem
+        '
+        Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(171, 22)
+        Me.AboutToolStripMenuItem.Text = "About"
+        '
         'MainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(461, 241)
+        Me.ClientSize = New System.Drawing.Size(461, 264)
         Me.Controls.Add(Me.conversionMethod)
         Me.Controls.Add(Me.progressBar)
         Me.Controls.Add(Me.Label2)
@@ -150,10 +200,16 @@ Partial Class MainForm
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.folderOpenBrowse)
         Me.Controls.Add(Me.folderOpenPath)
+        Me.Controls.Add(Me.MenuStrip)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MainMenuStrip = Me.MenuStrip
+        Me.MaximizeBox = False
         Me.Name = "MainForm"
         Me.Text = "Wirenut Compiler"
         Me.conversionMethod.ResumeLayout(False)
         Me.conversionMethod.PerformLayout()
+        Me.MenuStrip.ResumeLayout(False)
+        Me.MenuStrip.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -171,4 +227,10 @@ Partial Class MainForm
     Friend WithEvents conversionMethod As GroupBox
     Friend WithEvents conversionMethodModInfo As RadioButton
     Friend WithEvents conversionMethodFileName As RadioButton
+    Friend WithEvents MenuStrip As MenuStrip
+    Friend WithEvents FileToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ExitToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents HelpToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents CheckForUpdatesToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AboutToolStripMenuItem As ToolStripMenuItem
 End Class

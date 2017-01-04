@@ -21,6 +21,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_2DAA89BBED3799831C01104E370E0200"
+        "OwnerKey" = "8:_DCF3F9379BA4CCB4C20E2E0DCFC49814"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_326A2213FAA0FC834A2D40D90D4FE619"
         "OwnerKey" = "8:_4378EA0091744B0FA318A89E9C722D14"
         "MsmSig" = "8:_UNDEFINED"
@@ -33,7 +39,13 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_443C4DE3362E453BAA4F3E29CFFDD585"
+        "MsmKey" = "8:_7EFFFD447AF0B8BE7E8CB922296F1359"
+        "OwnerKey" = "8:_4378EA0091744B0FA318A89E9C722D14"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_941077885CAB4C18ABC3A1E72C6C07E0"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -51,7 +63,31 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_BAD22BFEE4C54F147071906A586D2DDF"
+        "MsmKey" = "8:_D180E1EE8E3A7915B1E6F1EA71C6E405"
+        "OwnerKey" = "8:_DE2F75380A75E004A727A7BEF0BA172B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_D180E1EE8E3A7915B1E6F1EA71C6E405"
+        "OwnerKey" = "8:_4378EA0091744B0FA318A89E9C722D14"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_DCF3F9379BA4CCB4C20E2E0DCFC49814"
+        "OwnerKey" = "8:_DE2F75380A75E004A727A7BEF0BA172B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_DCF3F9379BA4CCB4C20E2E0DCFC49814"
+        "OwnerKey" = "8:_4378EA0091744B0FA318A89E9C722D14"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_DE2F75380A75E004A727A7BEF0BA172B"
         "OwnerKey" = "8:_4378EA0091744B0FA318A89E9C722D14"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -64,7 +100,25 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_BAD22BFEE4C54F147071906A586D2DDF"
+        "OwnerKey" = "8:_7EFFFD447AF0B8BE7E8CB922296F1359"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_DE2F75380A75E004A727A7BEF0BA172B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_D180E1EE8E3A7915B1E6F1EA71C6E405"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_DCF3F9379BA4CCB4C20E2E0DCFC49814"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -142,6 +196,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.5"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.5 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.5"
+                    }
+                }
             }
         }
     }
@@ -234,9 +296,40 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_443C4DE3362E453BAA4F3E29CFFDD585"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_7EFFFD447AF0B8BE7E8CB922296F1359"
             {
-            "SourcePath" = "8:..\\WirenutCompiler\\icon.ico"
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_7EFFFD447AF0B8BE7E8CB922296F1359"
+                    {
+                    "Name" = "8:Newtonsoft.Json.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:Newtonsoft.Json.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_83EF1E58A2D240C9934A5F89F24763D3"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_941077885CAB4C18ABC3A1E72C6C07E0"
+            {
+            "SourcePath" = "8:..\\WirenutCompiler\\resources\\icon.ico"
             "TargetName" = "8:icon.ico"
             "Tag" = "8:"
             "Folder" = "8:_83EF1E58A2D240C9934A5F89F24763D3"
@@ -285,20 +378,82 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_BAD22BFEE4C54F147071906A586D2DDF"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_D180E1EE8E3A7915B1E6F1EA71C6E405"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:Semver, Version=1.1.2.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_BAD22BFEE4C54F147071906A586D2DDF"
+                    "_D180E1EE8E3A7915B1E6F1EA71C6E405"
                     {
-                    "Name" = "8:Newtonsoft.Json.dll"
+                    "Name" = "8:Semver.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:Newtonsoft.Json.dll"
+            "SourcePath" = "8:Semver.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_83EF1E58A2D240C9934A5F89F24763D3"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_DCF3F9379BA4CCB4C20E2E0DCFC49814"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Octokit, Version=0.3.4.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_DCF3F9379BA4CCB4C20E2E0DCFC49814"
+                    {
+                    "Name" = "8:Octokit.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:Octokit.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_83EF1E58A2D240C9934A5F89F24763D3"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_DE2F75380A75E004A727A7BEF0BA172B"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:GitHubUpdate, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_DE2F75380A75E004A727A7BEF0BA172B"
+                    {
+                    "Name" = "8:GitHubUpdate.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:GitHubUpdate.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_83EF1E58A2D240C9934A5F89F24763D3"
@@ -383,15 +538,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Wirenut Compiler"
-        "ProductCode" = "8:{7BBA863C-7C9D-47E5-9286-65054D4F6FB8}"
-        "PackageCode" = "8:{9E15CBE7-3AE7-4F3A-B306-1168F69BBBE1}"
+        "ProductCode" = "8:{B4D0DDC7-166E-4FB1-B817-AAD447DA698A}"
+        "PackageCode" = "8:{E774C1A3-DFB1-4675-88AC-E538288A5320}"
         "UpgradeCode" = "8:{0C49399B-1FCF-4CB1-8CAA-37590773A4D9}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:TRUE"
-        "ProductVersion" = "8:1.0.0"
+        "ProductVersion" = "8:0.5"
         "Manufacturer" = "8:Wirenut"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
@@ -515,7 +670,7 @@
             "Target" = "8:_4378EA0091744B0FA318A89E9C722D14"
             "Folder" = "8:_655BD042E8F645FDA3FDDB5A14D0F992"
             "WorkingFolder" = "8:_83EF1E58A2D240C9934A5F89F24763D3"
-            "Icon" = "8:_443C4DE3362E453BAA4F3E29CFFDD585"
+            "Icon" = "8:_941077885CAB4C18ABC3A1E72C6C07E0"
             "Feature" = "8:"
             }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_8F25EFF4485843D195FB158E40686FC2"
@@ -529,7 +684,7 @@
             "Target" = "8:_4378EA0091744B0FA318A89E9C722D14"
             "Folder" = "8:_DFF3DB3706444D6FBE2A4C986176E249"
             "WorkingFolder" = "8:_83EF1E58A2D240C9934A5F89F24763D3"
-            "Icon" = "8:_443C4DE3362E453BAA4F3E29CFFDD585"
+            "Icon" = "8:_941077885CAB4C18ABC3A1E72C6C07E0"
             "Feature" = "8:"
             }
         }

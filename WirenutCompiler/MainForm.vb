@@ -8,9 +8,6 @@ Imports System.Reflection
 Imports Newtonsoft.Json
 Imports Newtonsoft.Json.Linq
 
-Imports GitHubUpdate
-
-
 
 
 Public Class MainForm
@@ -198,50 +195,25 @@ Public Class MainForm
         Me.Close()
     End Sub
 
-    Private Async Sub CheckForUpdatesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CheckForUpdatesToolStripMenuItem.Click
+    Private Sub CheckForUpdatesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CheckForUpdatesToolStripMenuItem.Click
 
-        Dim updateChecker As New UpdateChecker("Siriuo", "wirenut-compiler")
+        Dim Updater As New Updater
 
-        Dim update As UpdateType = Await updateChecker.CheckUpdate
-
-        If update = UpdateType.None Then
-            MessageBox.Show("Already Up to Date!")
-
-        Else
-            Dim result As String = New UpdateNotifyDialog(updateChecker).ShowDialog
-
-            If result = DialogResult.Yes Then
-
-                updateChecker.DownloadAsset("WirenutCompilerInstaller.msi")
-
-            End If
-
-
-        End If
+        Updater.CheckUpdate()
 
 
     End Sub
 
-    Private Async Sub MainForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim updateChecker As New UpdateChecker("Siriuo", "wirenut-compiler")
+    Private Sub MainForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim Updater As New Updater
+        System.IO.File.Delete("installer.msi")
 
-        Dim update As UpdateType = Await updateChecker.CheckUpdate
-
-        If update = UpdateType.None Then
-            MessageBox.Show("Already Up to Date!")
-
-        Else
-            Dim result As String = New UpdateNotifyDialog(updateChecker).ShowDialog
-
-            If result = DialogResult.Yes Then
-
-                updateChecker.DownloadAsset("WirenutCompilerInstaller.msi")
-
-            End If
+        Updater.StartupCheckUpdate()
 
 
-        End If
+    End Sub
 
+    Private Sub AboutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem.Click
         Console.WriteLine(Application.ProductVersion)
     End Sub
 End Class

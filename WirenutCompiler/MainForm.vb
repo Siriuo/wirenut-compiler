@@ -28,6 +28,35 @@ Public Class MainForm
         Dim openPath As String = folderOpenPath.Text
         Dim savePath As String = folderSavePath.Text
 
+        Dim settingsJson As String = Environment.CurrentDirectory + "\resources\settings.json"
+
+        Using settingsStream As StreamReader = New StreamReader(settingsJson)
+
+            Dim settings As JToken = JToken.Parse(settingsStream.ReadToEnd.ToString)
+
+            settings("open-location") = folderOpenPath.Text
+
+            settings("save-location") = folderSavePath.Text
+
+            settingsStream.Close()
+
+            Using saveSettingsFile As New StreamWriter(Environment.CurrentDirectory + "\resources\settings.json")
+
+                Dim saveSettings As String = settings.ToString
+
+
+                saveSettingsFile.WriteLine(saveSettings)
+
+                Console.WriteLine("Save Settings" + saveSettings)
+
+            End Using
+
+
+        End Using
+
+
+
+
         If (openPath IsNot "" And savePath IsNot "" And Directory.Exists(openPath) And Directory.Exists(savePath)) Then
 
 
@@ -60,7 +89,8 @@ Public Class MainForm
 
                 Dim zipName As String
 
-
+                fileName.Replace(" ", "")
+                fileName.Replace("_", "-")
 
                 If conversionMethodModInfo.Checked Then
                     Using modStream As FileStream = New FileStream(modFile, FileMode.Open)
@@ -210,8 +240,21 @@ Public Class MainForm
 
         Updater.StartupCheckUpdate()
 
+        Dim settingsJson As String = Environment.CurrentDirectory + "\resources\settings.json"
+
+        Using settingsStream As StreamReader = New StreamReader(settingsJson)
+
+            Dim settings As JToken = JToken.Parse(settingsStream.ReadToEnd.ToString)
+
+
+
+            folderOpenPath.Text = settings.Item("open-location")
+            folderSavePath.Text = settings.Item("save-location")
+
+        End Using
 
     End Sub
+
 
     Private Sub AboutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem.Click
         Console.WriteLine(Application.ProductVersion)

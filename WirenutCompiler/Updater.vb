@@ -92,16 +92,36 @@ Public Class Updater
 
         Dim WebClient As New WebClient()
 
-        WebClient.DownloadFile(RemoteURI, "installer.msi")
+        Dim tempDir As String = Path.GetTempPath()
+
+        Directory.CreateDirectory(tempDir + "Wirenut")
+
+
+        WebClient.DownloadFile(RemoteURI, tempDir + "Wirenut\installer.msi")
+
+
+
 
         Dim responseMsg = MsgBox("Ready to Install! Would you like to run the installer?", MsgBoxStyle.YesNo, "Notice")
 
+        splash.SendToBack()
+
         If responseMsg = MsgBoxResult.Yes Then
-            Process.Start("installer.msi")
+
+            Dim ProcessInfo As New ProcessStartInfo
+
+            'ProcessInfo.Verb = "RunAs"
+            'ProcessInfo.WindowStyle = ProcessWindowStyle.Normal
+            'ProcessInfo.FileName = tempDir + "Wirenut\installer.msi"
+
+            Process.Start(tempDir + "Wirenut\installer.msi")
+
+
+
 
             System.Windows.Forms.Application.Exit()
         Else
-            System.IO.File.Delete("installer.msi")
+            System.IO.File.Delete(tempDir + "Wirenut\installer.msi")
         End If
 
 

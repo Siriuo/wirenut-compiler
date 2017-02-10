@@ -68,7 +68,6 @@ Public Class Updater
 
         Console.WriteLine(currentVersion)
         Console.WriteLine(latestVersion)
-
         If currentVersion < latestVersion Then
             Dim responseMsg = MsgBox("There is an Update! Would you like to download this Update?", MsgBoxStyle.YesNo, "Notice")
 
@@ -104,7 +103,7 @@ Public Class Updater
 
         Dim responseMsg = MsgBox("Ready to Install! Would you like to run the installer?", MsgBoxStyle.YesNo, "Notice")
 
-        splash.SendToBack()
+
 
         If responseMsg = MsgBoxResult.Yes Then
 
